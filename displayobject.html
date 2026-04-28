@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Object Keys & Values</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f6fc;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px lightgray;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4da6ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3399ff;
+        }
+
+        ul {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        li {
+            font-size: 18px;
+            padding: 5px;
+            color: #222;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Object Keys & Values</h2>
+        <button onclick="displayObject()">Show Details</button>
+        <ul id="output"></ul>
+    </div>
+
+    <script>
+        // Function to display object keys and values
+        function displayObject() {
+            let person = {
+                name: "Dhruthi",
+                age: 18,
+                city: "Hyderabad"
+            };
+
+            let result = "";
+
+            for (let key in person) {
+                result += "<li>" + key + " : " + person[key] + "</li>";
+            }
+
+            document.getElementById("output").innerHTML = result;
+        }
+    </script>
+
+</body>
+</html>
