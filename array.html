@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum of Array Elements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f6fc;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px lightgray;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 15px 0;
+            border: 1px solid #999;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4da6ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3399ff;
+        }
+
+        p {
+            font-size: 18px;
+            color: #222;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Sum of Array Elements</h2>
+        <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas">
+        <br>
+        <button onclick="calculateSum()">Calculate Sum</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function sumArray(arr) {
+            let sum = 0;
+
+            for (let i = 0; i < arr.length; i++) {
+                sum = sum + arr[i];
+            }
+
+            return sum;
+        }
+
+        function calculateSum() {
+            let input = document.getElementById("arrayInput").value;
+            let numbers = input.split(",").map(Number);
+            let total = sumArray(numbers);
+
+            document.getElementById("result").innerHTML = "Sum of elements: " + total;
+        }
+    </script>
+
+</body>
+</html>
