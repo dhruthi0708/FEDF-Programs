@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+
+    <style>
+       
+
+        .calculator {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        #screen {
+            width: 220px;
+            height: 40px;
+            margin-bottom: 15px;
+            font-size: 18px;
+            text-align: right;
+            padding: 5px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 50px;
+            height: 40px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #6c63ff;
+            color: white;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background-color: #574fd6;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .operator {
+            background-color: #ff8c42;
+        }
+
+        .operator:hover {
+            background-color: #e6762f;
+        }
+
+        .clear {
+            background-color: #ff4d4d;
+        }
+
+        .clear:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="calculator">
+    <h2>Calculator</h2>
+
+    <input type="text" id="screen" readonly><br>
+
+    <button onclick="press('1')">1</button>
+    <button onclick="press('2')">2</button>
+    <button onclick="press('3')">3</button>
+    <button class="operator" onclick="press('+')">+</button><br>
+
+    <button onclick="press('4')">4</button>
+    <button onclick="press('5')">5</button>
+    <button onclick="press('6')">6</button>
+    <button class="operator" onclick="press('-')">-</button><br>
+
+    <button onclick="press('7')">7</button>
+    <button onclick="press('8')">8</button>
+    <button onclick="press('9')">9</button>
+    <button class="operator" onclick="press('*')">*</button><br>
+
+    <button onclick="press('0')">0</button>
+    <button onclick="calculate()">=</button>
+    <button class="clear" onclick="clearScreen()">C</button>
+    <button class="operator" onclick="press('/')">/</button>
+</div>
+
+<script>
+let screen = document.getElementById("screen");
+
+function press(val) {
+    screen.value += val;
+}
+
+function calculate() {
+    try {
+        screen.value = eval(screen.value);
+    } catch {
+        screen.value = "Error";
+    }
+}
+
+function clearScreen() {
+    screen.value = "";
+}
+</script>
+
+</body>
+</html>
