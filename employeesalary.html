@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>High Salary Employees</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f6fc;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .box {
+            width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px lightgray;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4da6ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3399ff;
+        }
+
+        ul {
+            text-align: left;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Employees Salary > 50k</h2>
+    <button onclick="showEmployees()">Show Employees</button>
+    <ul id="result"></ul>
+</div>
+
+<script>
+    // Function to get employee names with salary > 50k
+    function getHighSalaryEmployees(empList) {
+        let result = [];
+
+        for (let i = 0; i < empList.length; i++) {
+            if (empList[i].salary > 50000) {
+                result.push(empList[i].name);
+            }
+        }
+
+        return result;
+    }
+
+    // Function to display result
+    function showEmployees() {
+        let employees = [
+            { name: "Amit", salary: 40000 },
+            { name: "Ravi", salary: 60000 },
+            { name: "Sneha", salary: 75000 },
+            { name: "Kiran", salary: 30000 }
+        ];
+
+        let highSalary = getHighSalaryEmployees(employees);
+
+        let output = "";
+        for (let i = 0; i < highSalary.length; i++) {
+            output += "<li>" + highSalary[i] + "</li>";
+        }
+
+        document.getElementById("result").innerHTML = output;
+    }
+</script>
+
+</body>
+</html>
