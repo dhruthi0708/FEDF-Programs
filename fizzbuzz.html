@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FizzBuzz Program</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: lightblue;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: deepskyblue;
+            color: white;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>FizzBuzz (1 to 50)</h2>
+
+    <button onclick="runFizzBuzz()">Run FizzBuzz</button>
+
+    <div id="output"></div>
+
+    <script>
+        function runFizzBuzz() {
+            let result = "";
+
+            for (let i = 1; i <= 50; i++) {
+
+                if (i % 3 === 0 && i % 5 === 0) {
+                    result += "FizzBuzz <br>";
+                }
+                else if (i % 3 === 0) {
+                    result += "Fizz <br>";
+                }
+                else if (i % 5 === 0) {
+                    result += "Buzz <br>";
+                }
+                else {
+                    result += i + " <br>";
+                }
+            }
+
+            document.getElementById("output").innerHTML = result;
+        }
+    </script>
+
+</body>
+</html>
